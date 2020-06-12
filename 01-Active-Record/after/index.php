@@ -11,7 +11,7 @@
 include_once 'user.php';
 
 $user = new User();
-$user->load(2);
+$user->load(1);
 
 echo '<pre>';
-print_r($user);
+print(json_encode($user));
