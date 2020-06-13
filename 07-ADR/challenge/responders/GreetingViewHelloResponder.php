@@ -8,22 +8,19 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-class Component
+class GreetingViewHelloResponder
 {
-    protected $name = '';
+    protected $domain = null;
 
-    public function __construct($name)
+    public function __construct()
     {
-        $this->name = $name;
+        $this->domain = new Greeting();
     }
 
-    public function addOneAndEcho($i)
+    public function run()
     {
-        $i++;
-        echo $i . '-' . $this->name . '<br />';
+        $message = $this->domain->hello();
 
-        Dispatcher::getInstance()::publish($this, $i);
-
-        return $i;
+        include 'templates/message.php';
     }
 }

@@ -3,5 +3,5 @@
 <?= $this->render('_form', array(
     'method' => 'PATCH',
     'action' => '/blog/edit',
-    'submit' => 'Update',
-); ?>
+    'submit' => 'Update'));
+?>

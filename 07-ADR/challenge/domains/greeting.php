@@ -8,22 +8,15 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-class Component
+class Greeting
 {
-    protected $name = '';
-
-    public function __construct($name)
+    public function hello()
     {
-        $this->name = $name;
+        return "Hello and welcome";
     }
 
-    public function addOneAndEcho($i)
+    public function goodbye()
     {
-        $i++;
-        echo $i . '-' . $this->name . '<br />';
-
-        Dispatcher::getInstance()::publish($this, $i);
-
-        return $i;
+        return "Goodbye and thanks for coming";
     }
 }

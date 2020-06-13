@@ -9,10 +9,16 @@
  */
 
 include_once 'component.php';
+include_once 'dispatcher.php';
 
 $componentA = new Component('Component A');
+$dispatcher = Dispatcher::getInstance();
+
 $componentB = new Component('Component B');
+$dispatcher::subscribe($componentA, $componentB);
+
 $componentC = new Component('Component C');
+$dispatcher::subscribe($componentA, $componentC);
 
 /**
  * Something important happens to Module A and so B and C need to take action so each
@@ -21,5 +27,3 @@ $componentC = new Component('Component C');
 
 $i = 0;
 $componentA->addOneAndEcho($i++);
-$componentB->addOneAndEcho($i++);
-$componentC->addOneAndEcho($i++);

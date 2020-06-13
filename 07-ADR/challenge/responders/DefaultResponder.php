@@ -8,22 +8,10 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-class Component
+class DefaultResponder
 {
-    protected $name = '';
-
-    public function __construct($name)
+    public function run()
     {
-        $this->name = $name;
-    }
-
-    public function addOneAndEcho($i)
-    {
-        $i++;
-        echo $i . '-' . $this->name . '<br />';
-
-        Dispatcher::getInstance()::publish($this, $i);
-
-        return $i;
+        include 'templates/default.php';
     }
 }

@@ -8,22 +8,13 @@
  *   videos. It will make way more sense and be more useful in general.
  */
 
-class Component
+class GreetingViewGoodbye
 {
-    protected $name = '';
+    protected $response = null;
 
-    public function __construct($name)
+    public function run()
     {
-        $this->name = $name;
-    }
-
-    public function addOneAndEcho($i)
-    {
-        $i++;
-        echo $i . '-' . $this->name . '<br />';
-
-        Dispatcher::getInstance()::publish($this, $i);
-
-        return $i;
+        $this->response = new GreetingViewGoodbyeResponder();
+        $this->response->run();
     }
 }
